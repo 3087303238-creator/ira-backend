@@ -1,10 +1,13 @@
 fastapi==0.109.0
 uvicorn[standard]==0.27.0
 sqlalchemy==2.0.25
-pydantic==2.5.3
+# 核心修复：降级 pydantic 到纯 Python 版本，避免 Rust 编译
+pydantic==1.10.14
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 gunicorn==21.2.0
 httpx==0.26.0
 python-multipart==0.0.6
+# 移除 pydantic-settings，改用 pydantic 1.x 的 Settings 方式
+# 或保持并兼容调整
 pydantic-settings==2.1.0
